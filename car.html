@@ -1,0 +1,95 @@
+<!-- center: {lat: -41.305, lng: 174.749},
+          zoom: 14 -->
+
+<!DOCTYPE HTML>
+<html>
+	
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	 <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+  	 <link rel="icon" type="image/png" href="img/favicon.png">
+  	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Mountain M8</title>
+
+ 
+
+</head>
+
+<body>
+
+	<div class="desktop">
+		<img src="img/logo4.png">
+		<h2> Mountain M8 is mobile only.</h2> <p> To demo the app, resize your browser or download the app from the App Store or Google Play</p>
+	</div>
+		
+	<div class="nav">
+		<h3><a href="calendar.html"><i class="fa fa-chevron-left" style="color:white"></i></a></h3> <h2> Transport Details</h2>
+	</div>
+
+	<div class="mobile">
+  <h3> I can pick up  <strong>2 riders and bikes</strong> 
+
+    <h3> Within <strong>800m </strong> from <strong>work </strong></h3>
+
+		<div id="map"></div>
+
+	
+
+  <br>
+
+  <a href="publish.html"><button class="button1">Publish Ride <i class="fa fa-chevron-right"></i></button></a>
+ 
+
+</div>
+		
+	 <footer>
+	          <a href="home.html"><p>Rides</p></a> <a href="trails.html"><p>New Ride</p></a> <a href="profile.html"><p>Profile</p></a>
+	  </footer>
+
+
+<script>
+      // This example creates circles on the map, representing populations in North
+      // America.
+
+      // First, create an object containing LatLng and population for each city.
+      var citymap = {
+        wellington: {
+          center: {lat: -41.295455, lng: 174.775448},
+  
+        }
+    
+      };
+
+      function initMap() {
+        // Create the map.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: {lat: -41.295455, lng: 174.775448},
+          
+        });
+
+        // Construct the circle for each value in citymap.
+        // Note: We scale the area of the circle based on the population.
+        for (var city in citymap) {
+          // Add the circle for this city to the map.
+          var cityCircle = new google.maps.Circle({
+            strokeColor: '#66a0af',
+            strokeOpacity: 0.4,
+            strokeWeight: 2,
+            fillColor: '#66a0af',
+            fillOpacity: 0.2,
+            map: map,
+            center: {lat: -41.295455, lng: 174.775448},
+            radius: 800, 
+          });
+        }
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_eeBhYZ0I6npjquktU3dVIssvyZOUeOk&callback=initMap">
+    </script>
+
+</body>
+ 
+</html>
